@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/navbar'
 import About from './components/About/about'
 import World from "./components/World/world";
 import Service from "./components/Service/service";
+import Video from "./components/Video/video";
 function App() {
   
 
@@ -16,6 +17,7 @@ function App() {
     <About/>
     <World />
     <Service/>
+    <Video/>
     </>
   );
 }

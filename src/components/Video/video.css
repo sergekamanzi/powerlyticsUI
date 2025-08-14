@@ -1,0 +1,45 @@
+:root {
+  --radius: 20px;
+}
+
+/* Full viewport section */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;           /* full screen */
+  overflow: hidden;
+  background: #000;        /* fallback while video loads */
+  border-radius: 0;        /* set to var(--radius) if you want rounded corners */
+}
+
+/* Make the video cover the entire section */
+.video-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* key: fills without distortion */
+  object-position: center;
+  display: block;
+  pointer-events: none;    /* clicks go through to any overlay content */
+}
+
+/* Optional gradient overlay (uncomment the overlay div in JSX to use) */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 5vw, 4rem);
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.35));
+}
+
+/* Respect users who prefer reduced motion: show first frame/poster instead */
+@media (prefers-reduced-motion: reduce) {
+  .video-media {
+    animation: none !important;
+  }
+}
