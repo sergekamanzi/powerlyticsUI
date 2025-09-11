@@ -5,6 +5,8 @@ import About from './components/About/about'
 import World from "./components/World/world";
 import Service from "./components/Service/service";
 import Video from "./components/Video/video";
+import Blog from "./components/Blog/blog";
+import Contact from "./components/Contact/contact";
 function App() {
   
 
@@ -18,6 +20,8 @@ function App() {
     <World />
     <Service/>
     <Video/>
+    <Blog/>
+    <Contact/>
     </>
   );
 }
