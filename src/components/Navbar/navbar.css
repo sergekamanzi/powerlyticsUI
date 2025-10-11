@@ -1,4 +1,3 @@
-/* Base styles */
 .main-navbar {
   display: flex;
   justify-content: space-between;
@@ -11,7 +10,7 @@
 }
 
 .logo-img {
-  height: 190px; /* Adjust based on your logo's aspect ratio */
+  height: 190px;
   width: 320px;
 }
 
@@ -37,7 +36,7 @@
 }
 
 .nav-links a:hover {
-  color: #23684c;
+  color: #7bb79f;
 }
 
 .nav-links a::after {

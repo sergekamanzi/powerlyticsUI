@@ -2,6 +2,7 @@ import './navbar.css';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { GoSignIn } from "react-icons/go";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,7 +39,7 @@ const Navbar = () => {
       </div>
 
       <div className='auth-buttons'>
-        <button className='login-btn' onClick={handleAuthNavigation}>Log in</button>
+        <button className='login-btn' onClick={handleAuthNavigation}>Sign In <GoSignIn /></button>
       </div>
 
       <div className='mobile-menu-toggle' onClick={toggleMobileMenu}>

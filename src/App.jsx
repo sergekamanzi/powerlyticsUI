@@ -9,11 +9,12 @@ import Video from "./components/Video/video";
 import Blog from "./components/Blog/blog";
 import Contact from "./components/Contact/contact";
 import Auth from "./components/Authentication/auth";
+import WhatsAppButton from './components/WhatsApp/WhatsAppButton';
 
 function App() {
   return (
     <Router>
-      <Routes>
+  <Routes>
         {/* Main Website Route */}
         <Route path="/" element={
           <>
@@ -37,6 +38,8 @@ function App() {
           </>
         } />
       </Routes>
+      {/* WhatsApp chat button (site-wide) */}
+      <WhatsAppButton />
     </Router>
   );
 }
