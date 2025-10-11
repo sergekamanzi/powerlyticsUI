@@ -1,58 +1,79 @@
+import { GoAlertFill } from "react-icons/go";   
+import { MdOutlineInsertChart, MdDashboard } from "react-icons/md"; 
+import { AiOutlineCluster } from "react-icons/ai";
+import { BiSolidReport } from "react-icons/bi";   
+import { FaBolt } from "react-icons/fa"; 
 import './service.css';
-import { FaSolarPanel, FaBatteryThreeQuarters, FaChartLine, FaMoneyBillWave } from 'react-icons/fa';
 
 const Service = () => {
+  const services = [
+    {
+      id: 1,
+      icon: <MdOutlineInsertChart />,
+      title: "Energy Prediction",
+      description: "Smart forecasting of household energy usage to help users plan consumption efficiently.",
+      position: "top-left"
+    },
+    {
+      id: 2,
+      icon: <AiOutlineCluster />,
+      title: "User Segmentation",
+      description: "Advanced clustering analysis to identify low, medium, and high energy consumption groups across Rwanda.",
+      position: "left"
+    },
+    {
+      id: 3,
+      icon: <GoAlertFill />,
+      title: "Anomaly Detection",
+      description: "Automatically detect unusual usage spikes or potential meter faults for timely interventions.",
+      position: "bottom-left"
+    },
+    {
+      id: 4,
+      icon: <BiSolidReport />,
+      title: "Weekly Reports",
+      description: "Get clear weekly insights on energy usage, bills, and growth trends in your household or region.",
+      position: "top-right"
+    },
+    {
+      id: 5,
+      icon: <FaBolt />,
+      title: "Appliance Analytics",
+      description: "Discover which appliances consume the most power and receive personalized efficiency tips.",
+      position: "right"
+    },
+    {
+      id: 6,
+      icon: <MdDashboard />,
+      title: "Business Intelligence",
+      description: "Empowering decision-makers with revenue analytics, tariff trends, and regional performance insights.",
+      position: "bottom-right"
+    }
+  ];
+
   return (
-    <section className="service-section">
-      <div className="service-container">
-        <div className="service-header">
-          <h2>Solar Solutions That Work</h2>
-          <p className="subtitle">Tailored To Perfection</p>
+    <div className="ecosystem-container">
+      <h1 className="ecosystem-title">POWERLYTICS'S INTEGRATED ECOSYSTEM</h1>
+      
+      <div className="ecosystem-wrapper">
+        <div className="center-logo">
+          <img src='/logo3.png' alt='Company Logo' className='logo-img' />
         </div>
 
-        <div className="services-grid">
-          {/* Solar Panel Install */}
-          <div className="service-card">
-            <div className="service-icon">
-              <FaSolarPanel />
+        {services.map((service) => (
+          <div key={service.id} className={`service-item ${service.position}`}>
+            <div className="dotted-line"></div>
+            <div className="service-content">
+              <div className="service-icon">{service.icon}</div>
+              <div className="service-text">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
             </div>
-            <h3>Solar Panel Install</h3>
-            <p>Tailor-made solar solutions designed to fit the unique specifications of your home or business.</p>
-            <a href="#" className="learn-more">Learn More</a>
           </div>
-
-          {/* Storage Solutions */}
-          <div className="service-card">
-            <div className="service-icon">
-              <FaBatteryThreeQuarters />
-            </div>
-            <h3>Storage Solutions</h3>
-            <p>Ensure uninterrupted power with our cutting-edge solar battery storage solutions.</p>
-            <a href="#" className="learn-more">Learn More</a>
-          </div>
-
-          {/* Efficiency Audit */}
-          <div className="service-card">
-            <div className="service-icon">
-              <FaChartLine />
-            </div>
-            <h3>Efficiency Audit</h3>
-            <p>Maximize your investment with our comprehensive solar efficiency audits, government approved!</p>
-            <a href="#" className="learn-more">Learn More</a>
-          </div>
-
-          {/* Financing & Incentives */}
-          <div className="service-card">
-            <div className="service-icon">
-              <FaMoneyBillWave />
-            </div>
-            <h3>Financing & Incentives</h3>
-            <p>Navigate the financial aspects of going solar with ease. Includes incentives, rebates, grants and more.</p>
-            <a href="#" className="learn-more">Learn More</a>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,19 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import "./video.css";
-
-/**
- * Fullscreen video section
- * Put your video file in `public/` and pass its path, e.g. "/hero.mp4"
- */
 export default function VideoSection({
-  src = "/video.mp4",
+  src = "/watt.mp4",
   poster = "",
   className = "",
   ariaLabel = "Background video",
 }) {
   const ref = useRef(null);
 
-  // Try to play on mount; gracefully handle browsers that might block autoplay
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
@@ -25,12 +19,10 @@ export default function VideoSection({
         // If autoplay is blocked, just leave it paused silently
       }
     };
-    // Some browsers need a tiny delay to resolve metadata
     const id = setTimeout(tryPlay, 50);
     return () => clearTimeout(id);
   }, []);
 
-  // Pause when tab is hidden, resume when visible
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
