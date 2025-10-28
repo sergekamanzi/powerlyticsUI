@@ -39,7 +39,7 @@ const Navbar = () => {
       </div>
 
       <div className='auth-buttons'>
-        <button className='login-btn' onClick={handleAuthNavigation}>Sign In <GoSignIn /></button>
+        <button className='login-btn' onClick={handleAuthNavigation}>Start free trial<GoSignIn /></button>
       </div>
 
       <div className='mobile-menu-toggle' onClick={toggleMobileMenu}>

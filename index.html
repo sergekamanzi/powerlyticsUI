@@ -37,6 +37,17 @@
       })();
     </script>
     <div id="root"></div>
+    <!-- Dev-only safeguard: clean up any stale PWA service workers/caches that may serve old files (e.g., main.tsx) on this origin. -->
+    <script type="module">
+      if (import.meta.env && import.meta.env.DEV && 'serviceWorker' in navigator) {
+        // Unregister all service workers for this origin
+        navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister())).catch(() => {});
+        // Clear caches that might have old app assets
+        if (window.caches && caches.keys) {
+          caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).catch(() => {});
+        }
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

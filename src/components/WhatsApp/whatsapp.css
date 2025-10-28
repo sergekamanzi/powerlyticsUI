@@ -6,10 +6,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: #25D366;
+  background: #2dbf63;
   color: #fff;
-  padding: 0.6rem 0.9rem;
-  border-radius: 999px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 1000px;
   box-shadow: 0 10px 30px rgba(37,211,102,0.18);
   text-decoration: none;
   transition: transform 200ms ease, box-shadow 200ms ease;
@@ -27,8 +27,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.12);
-  border-radius: 50%;
 }
 
 .whatsapp-label {

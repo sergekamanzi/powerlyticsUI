@@ -1,16 +1,25 @@
 import React from 'react';
 import './contact.css';
 import { MdContactless } from 'react-icons/md';
+import { motion } from 'framer-motion';
+import { slideVariants, staggerContainer, fadeIn } from '../../utils/motion';
 
 const Contact = () => {
   return React.createElement(
-    'section',
-    { className: 'contact-page' },
+    motion.section,
+    {
+      id: 'contact',
+      className: 'contact-page',
+      initial: 'hidden',
+      whileInView: 'visible',
+      viewport: { once: true, amount: 0.25 },
+      variants: staggerContainer(0.12)
+    },
 
     // ===== Top CTA =====
     React.createElement(
-      'div',
-      { className: 'contact-hero' },
+      motion.div,
+      { className: 'contact-hero', variants: slideVariants(false, 80) },
       React.createElement(
         'h2',
         null,
@@ -19,8 +28,8 @@ const Contact = () => {
         React.createElement('span', null, 'This is where to be.')
       ),
       React.createElement(
-        'p',
-        null,
+        motion.p,
+        { variants: fadeIn(0.15) },
         'Powerlytics is an excellent choice for households in rwanda, offering many helpful amenities designed to enhance your costs.'
       ),
       React.createElement(
@@ -33,8 +42,8 @@ const Contact = () => {
 
     // ===== Map with floating card =====
     React.createElement(
-      'div',
-      { className: 'contact-map-wrap' },
+      motion.div,
+      { className: 'contact-map-wrap', variants: slideVariants(true, 80) },
       React.createElement('iframe', {
         title: 'Kigali, Rwanda',
         className: 'contact-map',
@@ -42,8 +51,8 @@ const Contact = () => {
         src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63838.87907978794!2d30.016!3d-1.9441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca425d0c04a9d%3A0x2b2e1b6c1b1c0e5a!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2s!4v0000000000000'
       }),
       React.createElement(
-        'aside',
-        { className: 'contact-card', 'aria-label': 'Contact Details' },
+        motion.aside,
+        { className: 'contact-card', 'aria-label': 'Contact Details', variants: fadeIn(0.2) },
         React.createElement(
           'div',
           { className: 'card-media' },
@@ -78,7 +87,7 @@ const Contact = () => {
         React.createElement(
           'div',
           { className: 'col' },
-          React.createElement('h4', null, 'About'),
+          React.createElement('h4', null, ''),
           React.createElement(
             'ul',
             null,
@@ -96,7 +105,7 @@ const Contact = () => {
         React.createElement(
           'div',
           { className: 'col' },
-          React.createElement('h4', null, 'About'),
+          React.createElement('h4', null, ''),
           React.createElement(
             'ul',
             null,
@@ -114,7 +123,7 @@ const Contact = () => {
         React.createElement(
           'div',
           { className: 'col' },
-          React.createElement('h4', null, 'About'),
+          React.createElement('h4', null, ''),
           React.createElement(
             'ul',
             null,

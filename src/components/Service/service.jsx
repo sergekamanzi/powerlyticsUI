@@ -4,6 +4,9 @@ import { AiOutlineCluster } from "react-icons/ai";
 import { BiSolidReport } from "react-icons/bi";   
 import { FaBolt } from "react-icons/fa"; 
 import './service.css';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
+import { slideVariants, staggerContainer, fadeIn } from '../../utils/motion';
 
 const Service = () => {
   const services = [
@@ -52,16 +55,29 @@ const Service = () => {
   ];
 
   return (
-    <div className="ecosystem-container">
-      <h1 className="ecosystem-title">POWERLYTICS'S INTEGRATED ECOSYSTEM</h1>
+    <motion.section
+      id="services"
+      className="ecosystem-container"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      variants={staggerContainer(0.12)}
+    >
+      <motion.h1 className="ecosystem-title" variants={fadeIn(0.05)}>POWERLYTICS'S INTEGRATED ECOSYSTEM</motion.h1>
       
-      <div className="ecosystem-wrapper">
-        <div className="center-logo">
+      <motion.div className="ecosystem-wrapper" variants={fadeIn(0.1)}>
+        <motion.div className="center-logo" variants={fadeIn(0.2)}>
           <img src='/logo3.png' alt='Company Logo' className='logo-img' />
-        </div>
+        </motion.div>
 
-        {services.map((service) => (
-          <div key={service.id} className={`service-item ${service.position}`}>
+        {services.map((service, idx) => (
+          <motion.div
+            key={service.id}
+            className={`service-item ${service.position}`}
+            variants={slideVariants(
+              ["top-right","right","bottom-right"].includes(service.position)
+            , 70, 0.55, idx * 0.03)}
+          >
             <div className="dotted-line"></div>
             <div className="service-content">
               <div className="service-icon">{service.icon}</div>
@@ -70,10 +86,10 @@ const Service = () => {
                 <p>{service.description}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.section>
   );
 };
 
