@@ -1,0 +1,160 @@
+/* Base styles */
+.hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4eff8 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/hero1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/hero.png') no-repeat center center;
+  opacity: 0.5;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #e5e6e7;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #c1c2c3;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.cta {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cta.primary {
+  background-color: #216c3c;
+  color: white;
+}
+
+.cta.primary:hover {
+  background-color: #2e583e;
+  box-shadow: 0 4px 12px rgba(74, 108, 247, 0.3);
+}
+
+.cta.secondary {
+  background-color: transparent;
+  color: #f3f3f3;
+  border-color: #205b46;
+}
+
+.cta.secondary:hover {
+  background-color: rgba(74, 108, 247, 0.1);
+}
+
+.eco-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(74, 222, 128, 0.1);
+  border-radius: 50px;
+  color: #22c55e;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.eco-badge svg {
+  color: #22c55e;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .cta {
+    width: 100%;
+    max-width: 250px;
+  }
+}
