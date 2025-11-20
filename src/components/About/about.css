@@ -1,0 +1,249 @@
+/* Base Styles */
+.main-about {
+  padding: 1rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.stats-container {
+  padding: 3rem 1rem;
+  margin-bottom: 3rem;
+}
+
+.about-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+  min-width: 150px;
+  padding: 1rem;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  color: #23684c;
+  margin-bottom: 1rem;
+}
+
+.stat-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-description {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.about-description h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #3b82f6;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.description-text p {
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  color: #23684c;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.arrow-icon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-link:hover {
+  color: #459273;
+}
+
+.cta-link:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Technologies Slider */
+.tech-strip-wrapper {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.tech-strip {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px dashed rgba(2, 6, 23, 0.08);
+  border-bottom: 1px dashed rgba(2, 6, 23, 0.08);
+  padding: 1.25rem 0;
+}
+
+.tech-track {
+  display: flex;
+  gap: 0; /* use margins on items so both halves have identical total spacing */
+  align-items: center;
+  width: max-content;
+  animation: scroll-logos 20s linear infinite; /* slightly faster for a continuous feel */
+  will-change: transform;
+}
+
+.tech-item {
+  flex: 0 0 auto;
+  opacity: 0.85;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  margin-right: 4rem; /* tighter spacing so logos follow one another smoothly */
+}
+
+.tech-item img {
+  height: 40px;
+  width: auto;
+  display: block;
+  
+}
+
+.tech-item:hover { opacity: 1; transform: translateY(-2px); }
+
+@keyframes scroll-logos {
+  from { transform: translateX(-20%); }
+  to { transform: translateX(20%); }
+}
+
+@media (max-width: 768px) {
+  .tech-track { animation-duration: 22s; }
+  .tech-item { margin-right: 1.25rem; }
+  .tech-item img { height: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-track { animation-duration: 0.001s; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-about {
+    padding: 3rem 1rem;
+  }
+  
+  .stats-container {
+    padding: 2rem 1rem;
+  }
+  
+  .about-icons {
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    min-width: 120px;
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.25rem;
+  }
+  
+  .about-description h2 {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-item {
+    min-width: 100px;
+    padding: 0.5rem;
+  }
+  
+  .stat-icon {
+    font-size: 1.75rem;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.1rem;
+  }
+  
+  .stat-item p {
+    font-size: 0.9rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-description {
+    order: 2;
+  }
+  
+  .about-image {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+}
